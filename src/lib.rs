@@ -10,7 +10,6 @@
 //! from the outside (through combinators/for loop break)
 //! and is not prone to double panics/panics on drop.
 #[cfg(test)]
-#[macro_use]
 extern crate quickcheck;
 
 use std::{isize, ptr, mem};
@@ -179,6 +178,9 @@ impl<'a, I: 'a, P> Drop for VecDrainWhere<'a, I, P> {
 #[cfg(test)]
 mod tests {
     use quickcheck::TestResult;
+    //Uhm, this is not unused at all, so it being displayed
+    // as such is a rustc bug (is in the bug tracker).
+    #[allow(unused_imports)]
     use super::VecDrainWhereExt;
 
     mod check_with_mask {
@@ -268,7 +270,7 @@ mod tests {
                 });
 
             let res = ::std::panic::catch_unwind(::std::panic::AssertUnwindSafe(|| {
-                data.e_drain_where(|item| {
+                data.e_drain_where(|_item| {
                     let (mask, do_panic) = mask_iter.next()
                         .unwrap_or_else(|| {
                             fail = Some(TestResult::error("unexpected no more masks"));
