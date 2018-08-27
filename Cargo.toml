@@ -1,6 +1,6 @@
 [package]
 name = "vec-drain-where"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["Philipp Korber <p.korber@1aim.com>"]
 description = "alternative `Vec::drain_filter` impl"
 documentation = "https://docs.rs/vec-drain-where"

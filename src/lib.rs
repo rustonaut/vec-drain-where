@@ -14,6 +14,7 @@ extern crate quickcheck;
 
 use std::{isize, ptr, mem};
 
+/// Ext. trait adding `e_drain_where` to `Vec`
 pub trait VecDrainWhereExt<Item> {
     /// Drains all elements from the vector where the predicate is true.
     ///
