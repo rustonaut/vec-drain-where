@@ -1,7 +1,7 @@
 [package]
 name = "vec-drain-where"
-version = "1.0.0"
-authors = ["Philipp Korber <p.korber@1aim.com>"]
+version = "1.0.1"
+authors = ["Philipp Korber <p.korber@dac.eu>"]
 description = "alternative `Vec::drain_filter` impl"
 documentation = "https://docs.rs/vec-drain-where"
 keywords = ["Vec", "drain_filter", "drain_where"]
@@ -12,3 +12,6 @@ repository = "https://github.com/1aim/vec-drain-where"
 
 [dev-dependencies]
 quickcheck = "0.7"
+
+[badges]
+maintenance = { status = "passively-maintained" }
